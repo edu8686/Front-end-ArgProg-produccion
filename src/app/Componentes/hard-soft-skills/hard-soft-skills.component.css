@@ -1,0 +1,27 @@
+.row.hsskills {
+    padding: 5%;
+    height: auto;
+    background-color:#DEE6C8FF;
+}
+
+.row.text-center.softskills {
+    margin-top: 6%;
+}
+
+.row.text-center {
+    margin-bottom: 6%;
+}
+
+#HySTitle {
+    font-size: 3.5rem;
+}
+
+#hardskills {
+    font-size: 2.5rem;
+    border-bottom: 5px solid rgba(7,29,43,0.86);
+}
+
+#softskills {
+    font-size: 2.5rem;
+    border-bottom: 5px solid rgba(7,29,43,0.86);
+}

@@ -1,0 +1,17 @@
+<div class="row">
+    <div class="nav navbar navbar-dark bg-primary">
+        <div class="logo">
+            <img src="/assets/IMG/arg-prog-logo.png" alt="Bootstrap" height="75">
+        </div>
+        <div>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f icon"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter icon"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in icon"></i></a></li>
+                <li><a href="#"><i class="fab fa-google-plus-g icon"></i></a></li>
+            </ul>
+        </div>
+        <button type="button" class="btn btn-outline-light" (click)="login()" *ngIf="!isLogged">Iniciar sesión</button>
+        <button type="button" class="btn btn-outline-light" (click)="onLogOut()" *ngIf="isLogged">Cerrar sesión</button>
+    </div>
+</div>

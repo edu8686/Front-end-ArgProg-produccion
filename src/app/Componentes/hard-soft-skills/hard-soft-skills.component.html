@@ -1,0 +1,31 @@
+<div class="row hsskills">
+    <hgroup>
+        <h2 id="HySTitle">Hard & Soft Skills</h2>
+        <h3 id="hardskills">Hard skills</h3>
+    </hgroup>
+    <div class="col-lg-2">
+        <button type="button" routerLink="/newskill" class="btn btn-dark" *ngIf="isLogged">Nueva habilidad</button>
+    </div>
+    <div class="row text-center">
+        <div class="col-sm-4 col-md-4 col-lg-4 " *ngFor="let skill of skill">
+            <circle-progress [percent]="skill.porcentaje" [radius]="100" [outerStrokeWidth]="16" [innerStrokeWidth]="12"
+                [title]="(skill.nombre)" [showUnits]="false" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+                [animation]="true" [animationDuration]="600">
+            </circle-progress>
+            <td *ngIf="isLogged">
+                <button class="btn btn-warning" routerLink="/editskill/{{skill.id}}">
+                    editar
+                </button>
+            </td>
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(skill.id)">
+                    Borrar
+                </button>
+            </td>
+        </div>  
+    </div>
+    <h3 id="softskills">Soft skills</h3>
+    <div class="row text-center softskills">
+        
+    </div>
+</div>
