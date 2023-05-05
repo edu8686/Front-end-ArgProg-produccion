@@ -8,7 +8,7 @@ import { ExperienciaLab } from '../model/experienca-lab';
 })
 export class SExperienciaService {
 
-  expURL = 'http://localhost:8080/explab';
+  expURL = 'https://backendargprog-j21n.onrender.com/explab';
 
 
   constructor(private httpClient: HttpClient) { }
