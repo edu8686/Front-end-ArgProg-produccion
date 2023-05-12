@@ -1,3 +1,34 @@
 .imagen {
-    height: 400px;
+    height: 600px;
 }
+
+.row {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.row.menu {
+    position: absolute;
+    bottom: 40px;
+    left: 100px;
+    padding: 0;
+}
+
+.centered.nombre {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding-bottom: 2%;
+  }
+  .centered.carrera {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  div[name="menu"] {
+    font-family: "Roboto", sans-serif;
+  }

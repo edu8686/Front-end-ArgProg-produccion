@@ -1,18 +1,85 @@
-<div class="container" *ngIf="educacion">
+<div class="container formularios" *ngIf="educacion">
     <div class="row">
-        <div>
+        <div class="formulario">
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombreEd">Nombre de la institución</label>
-                    <input type="text" class="form-control" id="nombreEd" name="nombreEd" [(ngModel)]="educacion.nombreEd" required>
+                    <input type="text" class="form-control" id="nombreEd" name="nombreEd"
+                        [(ngModel)]="educacion.nombreEd" #nombreEd="ngModel" required minlength="10">
+                    <div *ngIf="nombreEd.invalid && (nombreEd.dirty || nombreEd.touched)" class="alert">
+                        <div *ngIf="nombreEd.errors?.['required']">
+                            <p name="requerido">Nombre requerido</p>
+                        </div>
+                        <div *ngIf="nombreEd.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 10 caracteres</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <!--
+                <div class="form-group" id="fechaInicial">
+                    <label for="fechaInicial">Desde:</label>
+                    <input type="date" class="form-control" id="fechaInicial" name="fechaInicial"
+                        [(ngModel)]="educacion.fechaInicial" #fechaInicial="ngModel" min="2000-01-01" max="2023-12-31" required>
+                    <div *ngIf="fechaInicial.invalid && (fechaInicial.dirty || fechaInicial.touched)" class="alert">
+                        <div *ngIf="fechaInicial.errors?.['required']">
+                            <p name="requerido">Ingresar fecha</p>
+                        </div>
+                    </div>
+                </div>
+                    <br>
+                <div class="form-group" id="fechaFinal">
+                        <label for="fechaFinal">Hasta: </label>
+                        <input type="date" class="form-control" id="fechaFinal" name="fechaFinal"
+                            [(ngModel)]="educacion.fechaFinal" #fechaFinal="ngModel" min="2000-01-01" max="2023-12-31" required>
+                        <div *ngIf="fechaFinal.invalid && (fechaFinal.dirty || fechaFinal.touched)" class="alert">
+                            <div *ngIf="fechaFinal.errors?.['required']">
+                                <p name="requerido">Ingresar fecha</p>
+                            </div>
+                        </div>
+                </div>
+                -->
+                    <br>
+                <div class="form-group">
+                        <label for="descripcionEd">Descripción</label>
+                        <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" required
+                            minlength="15" maxlength="500" [(ngModel)]="educacion.descripcionEd"
+                            #descripcionEd="ngModel">
+                        <div *ngIf="descripcionEd.invalid && (descripcionEd.dirty ||descripcionEd.touched)"
+                            class="alert">
+                            <div *ngIf="descripcionEd.errors?.['required']">
+                                <p name="requerido">Descripción requerida</p>
+                            </div>
+                            <div *ngIf="descripcionEd.errors?.['minlength']">
+                                <p name="requerido">Extensión mínima: 15 caracteres</p>
+                            </div>
+                            <div *ngIf="descripcionEd.errors?.['maxlength']">
+                                <p name="requerido">Extensión máxima: 500 caracteres</p>
+                            </div>
+                        </div>
                 </div>
                 <div class="form-group">
-                    <label for="descripcionEd">Descripción</label>
-                    <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" [(ngModel)]="educacion.descripcionEd" required>
-                </div>
-                <button class="btn btn-info">
-                    Actualizar
-                </button>
+                    <label for="img">Imagen</label>
+                    <input type="file" class="form-control" id="img" name="img" required
+                        minlength="15" maxlength="500" [(ngModel)]="educacion.imgEd"
+                        #imgEd="ngModel" (change)="uploadImageEd($event)" accept=".jpg, .jpeg, .png">
+                    <div *ngIf="imgEd.invalid && (imgEd.dirty ||imgEd.touched)"
+                        class="alert">
+                        <div *ngIf="imgEd.errors?.['required']">
+                            <p name="requerido">Descripción requerida</p>
+                        </div>
+                        <div *ngIf="imgEd.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 15 caracteres</p>
+                        </div>
+                    </div>
+            </div>
+            <div class="image">
+                <img src=".../../../../../assets/IMG/Logo_de_la_Universidad_de_Buenos_Aires.jpg" alt="">
+            </div>
+                <br>
+                    <button class="btn btn-info">
+                        Actualizar
+                    </button>
             </form>
         </div>
     </div>

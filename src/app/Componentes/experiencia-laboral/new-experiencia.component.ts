@@ -10,6 +10,8 @@ import { SExperienciaService } from 'src/app/service/s-experiencia.service';
 })
 export class NewExperienciaComponent implements OnInit {
 
+  fechaInicial: string = '';
+  fechaFinal: string = '';
   nombreExp: string = '';
   descripcionExp: string = '';
 
@@ -20,7 +22,7 @@ export class NewExperienciaComponent implements OnInit {
   }
 
   onCreate(): void{
-    const expe = new ExperienciaLab(this.nombreExp, this.descripcionExp);
+    const expe = new ExperienciaLab(this.nombreExp, this.fechaInicial, this.fechaFinal, this.descripcionExp);
     this.sExperiencia.save(expe).subscribe(data=>{
       alert("Experiencia añadidad");
       this.router.navigate(['']);

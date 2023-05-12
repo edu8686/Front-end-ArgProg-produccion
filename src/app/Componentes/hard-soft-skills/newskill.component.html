@@ -1,14 +1,27 @@
-<div class="container">
+<div class="container formularios">
     <div class="row">
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombre">Nueva habilidad</label>
-                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre" required>
+                    <input type="text" class="form-control" id="nombre" name="nombre" [(ngModel)]="nombre"
+                        #nombreSkill="ngModel" required>
+                    <div *ngIf="nombreSkill.invalid && (nombreSkill.dirty || nombreSkill.touched)" class="alert">
+                        <div *ngIf="nombreSkill.errors?.['required']">
+                            <p name="requerido">Nombre requerido</p>
+                        </div>
+                        <div *ngIf="nombreSkill.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 10 caracteres</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <label for="porcentaje">Porcentaje</label>
-                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="porcentaje" required>
+                        <label for="descripcionExp">Ingresar porcentaje</label>
+                        <input type="text" class="form-control" id="porcentaje" name="porcentaje"
+                            [(ngModel)]="porcentaje" required>
+                        <div *ngIf="nombreSkill.errors?.['minlength']">
+                            <p name="requerido">Se debe introducir un porcentaje</p>
+                        </div>
                 </div>
                 <button class="btn btn-info">
                     Agregar habilidad

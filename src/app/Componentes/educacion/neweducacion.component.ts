@@ -9,8 +9,12 @@ import { EducacionService } from 'src/app/service/educacion.service';
   styleUrls: ['./neweducacion.component.css']
 })
 export class NeweducacionComponent {
+  fechaInicial: string = '';
+  fechaFinal: string = '';
   nombreEd: string = '';
   descripcionEd: string = '';
+  imageEd: string = '';
+
 
   constructor(private educacionS: EducacionService, private router: Router) {}
 
@@ -19,7 +23,7 @@ export class NeweducacionComponent {
   }
 
   onCreate(): void{
-    const expe = new Educacion(this.nombreEd, this.descripcionEd);
+    const expe = new Educacion(this.nombreEd, this.fechaInicial, this.fechaFinal, this.descripcionEd, this.imageEd);
     this.educacionS.save(expe).subscribe(data=>{
       alert("Educacion añadidad");
       this.router.navigate(['']);

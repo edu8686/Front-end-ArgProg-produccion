@@ -1,0 +1,47 @@
+p[name="requerido"] {
+    color: rgba(236, 9, 9, 0.836);
+}
+
+.formulario {
+    padding: 10%;
+}
+
+.container.formularios {
+    background-color: #d2d9c2;
+    padding: 6%;
+    padding-left: 15%;
+}
+
+label {
+    padding: 10px;
+    display: inline-block;
+    font-size: 1.4em;
+}
+
+.btn.btn-info {
+    background-color: #4b74c7;
+    border-color: aliceblue;
+    font-size: 1.3em;
+    padding: 2%;
+    margin: 3%;
+    margin-left: 0;
+}
+
+.form-control {
+    display: block;
+    width: 70%;
+    padding: 0.75rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 2.5;
+    color: var(--bs-body-color);
+    background-color: var(--bs-form-control-bg);
+}
+
+#fechaInicial {
+    width: 55%;
+}
+
+#fechaFinal {
+    width: 55%;
+}

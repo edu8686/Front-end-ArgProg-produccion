@@ -1,14 +1,33 @@
-<div class="container" *ngIf="expLab">
+<div class="container formularios" *ngIf="expLab">
     <div class="row">
         <div>
             <form (ngSubmit)="onUpdate()" novalidate #f="ngForm">
                 <div class="form-group">
                     <label for="nombreExp">Nombre de la empresa</label>
-                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" [(ngModel)]="expLab.nombreExp" required>
+                    <input type="text" class="form-control" id="nombreExp" name="nombreExp" #nombreExp="ngModel" [(ngModel)]="expLab.nombreExp" required minlength="10" required>
+                    <div *ngIf="nombreExp.invalid && (nombreExp.dirty || nombreExp.touched)" class="alert">
+                        <div *ngIf="nombreExp.errors?.['required']">
+                            <p name="requerido">Nombre requerido</p>
+                        </div>
+                        <div *ngIf="nombreExp.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 10 caracteres</p>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="descripcionExp">Descripción de las tareas</label>
-                    <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" [(ngModel)]="expLab.descripcionExp" required>
+                    <input type="text" class="form-control" id="descripcionExp" name="descripcionExp" #descripcionExp="ngModel"  required minlength="10" maxlength="500" [(ngModel)]="expLab.descripcionExp" required>
+                    <div *ngIf="descripcionExp.invalid && (descripcionExp.dirty ||descripcionExp.touched)" class="alert">
+                        <div *ngIf="descripcionExp.errors?.['required']">
+                            <p name="requerido">Descripción requerida</p>
+                        </div>
+                        <div *ngIf="descripcionExp.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 15 caracteres</p>
+                        </div>
+                        <div *ngIf="descripcionExp.errors?.['maxlength']">
+                            <p name="requerido">Extensión máxima: 500 caracteres</p>
+                        </div>
+                    </div>
                 </div>
                 <button class="btn btn-info">
                     Actualizar

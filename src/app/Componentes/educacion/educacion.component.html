@@ -1,7 +1,7 @@
 <div class="row educacion">
     <h1>Educacion</h1>
     <div class="col-lg-1">
-        <button type="button" class="btn btn-info" routerLink="/nuevaeducacion">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaeducacion">
             Agregar Educación
         </button>
     </div>
@@ -12,12 +12,16 @@
         <table class="table">
             <tbody>
                 <tr *ngFor="let Educacion of educacion">
-                    <td>
-                        <h2>{{Educacion.nombreEd}}</h2>
+                    <td id="imagen">
+                        <img id="logo-UBA" src="{{Educacion.imgEd}}" alt="">
                     </td>
-                    <td>{{Educacion.descripcionEd}}</td>
+                    <td id="nombreDescripcion">
+                        <h5>{{Educacion.nombreEd}}</h5>
+                        {{Educacion.descripcionEd}}
+                        <div>{{Educacion.fechaInicial}} - {{Educacion.fechaFinal}}</div>
+                    </td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-warning" routerLink="/editeducacion{{Educacion.id}}">
+                        <button class="btn btn-warning" routerLink="/editeducacion/{{Educacion.id}}">
                             Editar
                         </button>
                     </td>

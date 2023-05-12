@@ -1,27 +1,22 @@
 <div class="acerca">
     <div class="row acerca">
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+        <div class="col-lg-1">
+            <button type="button" class="btn btn-dark" routerLink="/editAcerca/4" *ngIf="isLogged">
+                Editar
+            </button>
+        </div>
+        <div class="col-4">
             <div>
-                <img src="../../../assets/IMG/Coliseo 48.jpg" alt="..." class="img-fluid">
+                <img src={{persona.img}} alt="..." class="img-fluid">
             </div>
-            <p class="acerca nombre">{{persona.nombre}} D'negri</p>
         </div>
-        <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
-
-            <br>
-            <p class="acerca">Full Stack Developer Jr.</p>
-        </div>
-        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+        <div class="col-5">
             <span>
             <h3>{{title}}</h3>
             <br>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Natus hic tempora amet modi placeat
-                facilis consequuntur adipisci,
-                corporis esse inventore
-                molestiae pariatur numquam.
-                Minima magni nobis rem voluptatem quidem eos?</p>
+            <p>{{persona.descripcion}}</p>
             </span>
         </div>
+        <div class="col-2"></div>
     </div>
 </div>

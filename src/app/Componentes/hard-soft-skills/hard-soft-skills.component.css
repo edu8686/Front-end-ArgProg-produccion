@@ -1,7 +1,10 @@
 .row.hsskills {
     padding: 5%;
     height: auto;
-    background-color:#DEE6C8FF;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #e6f3e6a3;
+    margin-top: 1%;
 }
 
 .row.text-center.softskills {

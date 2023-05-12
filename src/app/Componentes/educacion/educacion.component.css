@@ -1,6 +1,42 @@
 div.row.educacion {
     padding: 5%;
     height: auto;
-    background-color:rgb(178, 199, 241);
+    background-color: #e6f3e6a3;
+    margin-left: 10%;
+    margin-right: 10%;
+    margin-top: 1%;
 }
 
+.btn.btn-dark {
+    margin: 50%;
+}
+
+#logo-UBA {
+    width: 95%;
+}
+
+#imagen {
+    width: 10%;
+}
+
+#nombreDescripcion {
+    margin-left: 50%;
+}
+
+#nombre {
+    float:left;
+    margin-left: 1%;
+    
+}
+
+#descripcion {
+    margin-left: 42%;
+}
+
+#fechafinal {
+    float: right;
+}
+
+tr {
+    background-color: white;
+}

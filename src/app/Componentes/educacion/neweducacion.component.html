@@ -1,15 +1,63 @@
-<div class="container">
+
+<div class="container formularios">
     <div class="row">
         <div>
             <form (ngSubmit)="onCreate()" novalidate #f="ngForm">
                 <div class="form-group">
-                    <label for="nombreEd">Nombre de la institución</label>
-                    <input type="text" class="form-control" id="nombreEd" name="nombreEd" [(ngModel)]="nombreEd" required>
+                    <label class="labelform" for="nombreEd">Nombre de la institución</label>
+                    <input type="text" class="form-control" id="nombreEd" name="nombreEd"
+                        [(ngModel)]="nombreEd" #nombreEdNuevo="ngModel" required minlength="10">
+                    <div *ngIf="nombreEdNuevo.invalid && (nombreEdNuevo.dirty || nombreEdNuevo.touched)" class="alert">
+                        <div *ngIf="nombreEdNuevo.errors?.['required']">
+                            <p name="requerido">Nombre requerido</p>
+                        </div>
+                        <div *ngIf="nombreEdNuevo.errors?.['minlength']">
+                            <p name="requerido">Extensión mínima: 10 caracteres</p>
+                        </div>
+                    </div>
                 </div>
+                <br>
+                <div class="form-group" id="fechaInicial">
+                    <label class="labelform" for="fechaInicial">Desde:</label>
+                    <input type="date" class="form-control" id="fechaInicial" name="fechaInicial"
+                        [(ngModel)]="fechaInicial" #fechaInicialNuevo="ngModel" min="2000-01-01" max="2023-12-31" required>
+                    <div *ngIf="fechaInicialNuevo.invalid && (fechaInicialNuevo.dirty || fechaInicialNuevo.touched)" class="alert">
+                        <div *ngIf="fechaInicialNuevo.errors?.['required']">
+                            <p name="requerido">Ingresar fecha</p>
+                        </div>
+                    </div>
+                </div>
+                    <br>
+                <div class="form-group" id="fechaFinal">
+                        <label class="labelform" for="fechaFinal">Hasta: </label>
+                        <input type="date" class="form-control" id="fechaFinal" name="fechaFinal"
+                            [(ngModel)]="fechaFinal" #fechaFinalNuevo="ngModel" min="2000-01-01" max="2023-12-31" required>
+                        <div *ngIf="fechaFinalNuevo.invalid && (fechaFinalNuevo.dirty || fechaFinalNuevo.touched)" class="alert">
+                            <div *ngIf="fechaFinalNuevo.errors?.['required']">
+                                <p name="requerido">Ingresar fecha</p>
+                            </div>
+                        </div>
+                </div>
+                    <br>
                 <div class="form-group">
-                    <label for="descripcionExp">Descripción</label>
-                    <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" [(ngModel)]="descripcionEd" required>
+                        <label class="labelform" for="descripcionEd">Descripción</label>
+                        <input type="text" class="form-control" id="descripcionEd" name="descripcionEd" required
+                            minlength="15" maxlength="500" [(ngModel)]="descripcionEd"
+                            #descripcionEdNuevo="ngModel">
+                        <div *ngIf="descripcionEdNuevo.invalid && (descripcionEdNuevo.dirty ||descripcionEdNuevo.touched)"
+                            class="alert">
+                            <div *ngIf="descripcionEdNuevo.errors?.['required']">
+                                <p name="requerido">Descripción requerida</p>
+                            </div>
+                            <div *ngIf="descripcionEdNuevo.errors?.['minlength']">
+                                <p name="requerido">Extensión mínima: 15 caracteres</p>
+                            </div>
+                            <div *ngIf="descripcionEdNuevo.errors?.['maxlength']">
+                                <p name="requerido">Extensión máxima: 500 caracteres</p>
+                            </div>
+                        </div>
                 </div>
+                <br>
                 <button class="btn btn-info">
                     Agregar Educacion
                 </button>

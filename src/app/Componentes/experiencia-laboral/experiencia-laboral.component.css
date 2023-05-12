@@ -1,4 +1,35 @@
 div.row.experiencia {
     padding: 5%;
     height: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    background-color: #dee6c8;
+    margin-top: 1%;
+}
+
+.btn.btn-dark {
+    margin: 50%;
+}
+
+
+#nombreDescripcion {
+    margin-left: 50%;
+}
+
+#nombre {
+    float:left;
+    margin-left: 1%;
+    
+}
+
+#descripcion {
+    margin-left: 42%;
+}
+
+#fechafinal {
+    float: right;
+}
+
+tr {
+    background-color: white;
 }

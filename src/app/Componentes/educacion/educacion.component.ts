@@ -24,6 +24,7 @@ export class EducacionComponent {
     }
   }
 
+
   cargarEducacion(): void{
     this.educacionS. lista().subscribe(
       data => {this.educacion = data;})

@@ -1,7 +1,7 @@
 <div class="row experiencia">
     <h1>Experiencia laboral</h1>
     <div class="col-lg-1">
-        <button type="button" class="btn btn-info" routerLink="/nuevaexp">
+        <button type="button" class="btn btn-dark" routerLink="/nuevaexp">
             Nueva experiencia
         </button>
     </div>
@@ -12,12 +12,17 @@
         <table class="table">
             <tbody>
                 <tr *ngFor="let experiencia of expe">
-                    <td>
-                        <h2>{{experiencia.nombreExp}}</h2>
+                    <!-- <td id="imagen">
+                        <img id="logo-UBA" src="{{Educacion.imgEd}}" alt="">
+                    </td>-->
+                    <td id="nombreDescripcion">
+                        <h5>{{experiencia.nombreExp}}</h5>
+                        {{experiencia.descripcionExp}}
+                        <div>{{experiencia.fechaInicial}} - {{experiencia.fechaFinal}}</div>
                     </td>
-                    <td>{{experiencia.descripcionExp}}</td>
+                    <td></td>
                     <td *ngIf="isLogged">
-                        <button class="btn btn-warning" routerLink="/editexp{{experiencia.id}}">
+                        <button class="btn btn-warning" routerLink="/editexp/{{experiencia.id}}">
                             Editar
                         </button>
                     </td>
