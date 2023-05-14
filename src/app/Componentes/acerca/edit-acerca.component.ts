@@ -19,7 +19,7 @@ export class EditAcercaComponent {
 
   ngOnInit(): void {
     const id = this.activatedRouter.snapshot.params['id'];
-    this.personaService.detail(id).subscribe(
+    this.personaService.detail(1).subscribe(
       data => {
         this.persona = data;
       }, err => err => {

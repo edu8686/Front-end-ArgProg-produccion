@@ -40,13 +40,14 @@ export class LogInComponent implements OnInit {
       this.roles = data.authorities;
       console.log("DATA:" + JSON.stringify(data));
       this.router.navigate([''])
-    }, /*err => {
+    }, err => {
       this.isLogged = false;
       this.isLogginFail = true;
       this.errMsj = err.error.mensaje;
       console.log(this.errMsj);
+      this.router.navigate([''])
 
-    }*/)
+    })
   }
 
 }
